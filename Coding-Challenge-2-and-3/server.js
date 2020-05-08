@@ -1,11 +1,13 @@
 const express = require( 'express' );
 const bodyParser = require( 'body-parser' );
 const mongoose = require( 'mongoose' );
+const morgan = require('morgan');
 const jsonParser = bodyParser.json();
 const { DATABASE_URL, PORT } = require( './config' );
 const { sportsController } = require('./sport-model.js')
 const app = express();
 const uuid = require( 'uuid' );
+app.use(morgan('dev'));
 
 
 /* Your code goes here */
